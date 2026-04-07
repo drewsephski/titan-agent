@@ -21,8 +21,4 @@ export const siteConfig: SiteConfig = {
     name: "rds_agi",
     url: "https://rdsx.dev",
   },
-  socials: {
-    github: "https://github.com/rudrodip/titan",
-    x: "https://x.com/rds_agi",
-  }
 }

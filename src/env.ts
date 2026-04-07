@@ -14,9 +14,6 @@ export const env = createEnv({
     // Google
     GOOGLE_CLIENT_ID: z.string().min(1),
     GOOGLE_CLIENT_SECRET: z.string().min(1),
-    // Discord
-    DISCORD_CLIENT_ID: z.string().min(1),
-    DISCORD_CLIENT_SECRET: z.string().min(1),
   },
   client: {},
   experimental__runtimeEnv: {},

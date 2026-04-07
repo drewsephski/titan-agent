@@ -6,21 +6,12 @@ import { Button } from "@/components/ui/button";
 import { UserProfile } from "@/components/user-profile";
 import { siteConfig } from "@/config/site.config";
 import { cn } from "@/lib/utils";
-import { PanelsTopLeft, Shield, Database, Server, Component, Code, ArrowRight, Sparkle, Github, Copy, Check, ArrowUpRight } from "lucide-react";
+import { PanelsTopLeft, Shield, Database, Server, Component, Code, ArrowRight, Sparkle, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "@/lib/auth-client";
 
 export default function Home() {
-  const [copied, setCopied] = useState(false);
   const { data: session, isPending } = useSession();
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`git clone ${siteConfig.socials.github}`);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  }
 
   return (
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
@@ -66,24 +57,7 @@ export default function Home() {
               <h1 className="head-text-md">Titan</h1>
               <p className="text-muted-foreground max-w-3xl">{siteConfig.description}</p>
             </div>
-            <div id="code" className="flex flex-col p-4">
-              <div className="p-2 border border-dashed hover:border-primary/50 bg-card text-xs md:text-sm flex items-center justify-between transition-all duration-200 delay-75">
-                <pre className="font-mono bg-linear-to-r from-muted-foreground to-foreground bg-clip-text text-transparent">
-                  git clone {siteConfig.socials.github}
-                </pre>
-                <Button variant="ghost" size="icon" className="size-5 cursor-pointer group/copy" onClick={handleCopy}>
-                  {copied ? <Check className="size-3" /> : <Copy className="size-3 group-hover/copy:text-foreground" />}
-                </Button>
-              </div>
-            </div>
             <div id="cta" className="flex items-center gap-4 p-4">
-              <Button variant="outline" asChild className="relative border-dashed">
-                <a href={siteConfig.socials.github} target="_blank" className="gap-2 group">
-                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Github className="size-4" />
-                  <span>GitHub</span>
-                </a>
-              </Button>
               <Button asChild>
                 <Link href="/dashboard" className="gap-2 group">
                   <span>Get started</span>

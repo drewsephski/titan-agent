@@ -20,7 +20,6 @@ export default function AuthCard({
 }) {
   const [githubLoading, setGithubLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [discordLoading, setDiscordLoading] = useState(false);
 
   return (
     <Card className="max-w-md w-full rounded-none border-dashed">
@@ -49,14 +48,6 @@ export default function AuthCard({
               setLoading={setGoogleLoading}
               callbackURL="/dashboard"
               icon={<Icons.Google />}
-            />
-            <SignInButton
-              title="Sign in with Discord"
-              provider="discord"
-              loading={discordLoading}
-              setLoading={setDiscordLoading}
-              callbackURL="/dashboard"
-              icon={<Icons.Discord />}
             />
           </div>
         </div>
@@ -93,7 +84,7 @@ const SignInButton = ({
   icon,
 }: {
   title: string;
-  provider: "github" | "google" | "discord";
+  provider: "github" | "google";
   loading: boolean;
   setLoading: (loading: boolean) => void;
   callbackURL: string;

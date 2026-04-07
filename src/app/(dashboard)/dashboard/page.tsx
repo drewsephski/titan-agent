@@ -1,8 +1,6 @@
 import { getUser } from "@/lib/auth-utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github } from "lucide-react";
-import { siteConfig } from "@/config/site.config";
 import Link from "next/link";
 
 export default async function DashboardPage() {
@@ -41,26 +39,8 @@ export default async function DashboardPage() {
 							Start building your ideal dashboard by adding components and data visualizations.
 						</p>
 						<div className="flex items-center justify-center gap-2">
-							<Button variant="outline" asChild className="relative border-dashed">
-								<a href={siteConfig.socials.github} target="_blank" className="gap-2 group">
-									<div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-									<Github className="size-4" />
-									<span>GitHub</span>
-								</a>
-							</Button>
-							<Button variant="outline" asChild className="relative border-dashed">
-								<a href={siteConfig.socials.x} target="_blank" className="gap-2 group">
-									<div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-									<svg
-										viewBox="0 0 1200 1227"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="var(--foreground)"
-										className="size-4"
-									>
-										<path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
-									</svg>
-									<span>X</span>
-								</a>
+							<Button asChild>
+								<Link href="/">Go Home</Link>
 							</Button>
 						</div>
 					</div>

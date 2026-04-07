@@ -9,8 +9,4 @@ export type SiteConfig = {
     name: string;
     url: string;
   }
-  socials: {
-    github: string;
-    x: string;
-  }
 }

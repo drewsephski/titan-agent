@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun:*)",
+      "Bash(bun run:*)",
+      "Bash(bun install:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(next:*)",
+      "Bash(drizzle-kit:*)",
+      "Bash(eslint:*)",
+      "Bash(tsc:*)",
+      "Bash(tailwindcss:*)",
+      "Bash(git:*)",
+      "Bash(docker compose:*)",
+      "Bash(stripe:*)",
+      "Bash(vercel:*)"
+    ],
+    "deny": []
+  }
+}
