@@ -108,3 +108,4 @@ export const db = drizzle(sql, { schema });
 Continue steps from Getting Started e.g. generating the database schema, applying migrations, and running the dev server.
 
 Open the browser and navigate to `http://localhost:3000`
+# titan-agent
