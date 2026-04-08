@@ -17,5 +17,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
+  "registries": {
+    "@simple-ai": "https://simple-ai.dev/r/{name}.json"
+  },
   "iconLibrary": "lucide"
 }

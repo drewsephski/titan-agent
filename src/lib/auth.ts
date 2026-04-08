@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { admin } from "better-auth/plugins";
 import { db } from "@/lib/db";
 import { env } from "@/env";
 
@@ -18,5 +19,13 @@ export const auth = betterAuth({
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
   },
-  plugins: [nextCookies()]
+  plugins: [
+    admin({
+      adminRoles: ["admin"],
+      defaultRole: "buyer",
+    }),
+    nextCookies(),
+  ],
 });
+
+export type Session = typeof auth.$Infer.Session;

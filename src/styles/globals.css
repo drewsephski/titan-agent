@@ -124,7 +124,6 @@
   }
 }
 
-
 ::-moz-selection {
   color: var(--background);
   background: var(--foreground);
@@ -171,4 +170,37 @@
   to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
+}
+
+/* ReactFlow dark mode overrides */
+.dark .react-flow__controls {
+  background: oklch(0.205 0 0);
+  border-color: oklch(1 0 0 / 10%);
+}
+
+.dark .react-flow__controls-button {
+  background: oklch(0.205 0 0);
+  border-color: oklch(1 0 0 / 10%);
+  color: oklch(0.985 0 0);
+}
+
+.dark .react-flow__controls-button:hover {
+  background: oklch(0.269 0 0);
+}
+
+.dark .react-flow__controls-button svg {
+  fill: oklch(0.985 0 0);
+}
+
+.dark .react-flow__minimap {
+  background: oklch(0.205 0 0);
+  border-color: oklch(1 0 0 / 10%);
+}
+
+.dark .react-flow__minimap-mask {
+  fill: oklch(0.145 0 0 / 0.7);
+}
+
+.dark .react-flow__background {
+  background: oklch(0.145 0 0);
 }
