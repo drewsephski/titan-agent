@@ -159,10 +159,3 @@ export async function POST(request: Request) {
 		);
 	}
 }
-
-// Disable body parsing to get raw body for signature verification
-export const config = {
-	api: {
-		bodyParser: false,
-	},
-};

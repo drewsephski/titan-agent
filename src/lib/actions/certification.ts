@@ -148,10 +148,10 @@ export async function runCertificationTests(templateId: string) {
 	};
 
 	// Run security scan
-	const securityResults = runSecurityScan(workflowJson);
+	const securityResults = await runSecurityScan(workflowJson);
 
 	// Calculate performance metrics
-	const performanceMetrics = calculatePerformanceMetrics(workflowJson);
+	const performanceMetrics = await calculatePerformanceMetrics(workflowJson);
 
 	// Run test cases
 	const testCases = certTest.testCases as TestCase[];
@@ -311,7 +311,7 @@ export async function reviewCertification(
 /**
  * Security scan for workflows
  */
-export function runSecurityScan(workflowJson: { nodes: FlowNode[]; edges: FlowEdge[] }): SecurityScanResult[] {
+export async function runSecurityScan(workflowJson: { nodes: FlowNode[]; edges: FlowEdge[] }): Promise<SecurityScanResult[]> {
 	const results: SecurityScanResult[] = [];
 	const { nodes } = workflowJson;
 
@@ -351,10 +351,10 @@ export function runSecurityScan(workflowJson: { nodes: FlowNode[]; edges: FlowEd
 /**
  * Calculate performance metrics
  */
-export function calculatePerformanceMetrics(workflowJson: {
+export async function calculatePerformanceMetrics(workflowJson: {
 	nodes: FlowNode[];
 	edges: FlowEdge[];
-}): PerformanceMetrics {
+}): Promise<PerformanceMetrics> {
 	const { nodes, edges } = workflowJson;
 
 	// Simple estimation based on workflow complexity

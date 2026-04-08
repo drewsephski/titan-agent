@@ -10,7 +10,7 @@ import {
 	type WorkflowToolId,
 	workflowTools,
 } from "@/lib/tools";
-import { workflowModel } from "@/lib/workflow/models";
+import { workflowModel, type workflowModelID } from "@/lib/workflow/models";
 import type { AgentNode } from "@/lib/workflow/nodes/agent/agent.shared";
 import type {
 	ExecutionContext,
@@ -50,8 +50,9 @@ async function executeAgentNode(
 
 	const maxSteps = node.data.maxSteps ?? 5;
 
+	const modelId = node.data.model as workflowModelID;
 	const streamResult = streamText({
-		model: workflowModel.languageModel(node.data.model),
+		model: workflowModel.languageModel(modelId),
 		system: node.data.systemPrompt,
 		messages: accumulatedMessages,
 		tools: agentTools,
